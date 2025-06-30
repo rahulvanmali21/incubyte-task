@@ -38,6 +38,15 @@ describe("String Calculator - add()", () => {
     });
   });
 
+  describe("Any Numbers greater than equal 1000", () => {
+    test("Skiping numbers > 1000", () => {
+      expect(add("1\n2,3,1000")).toBe(6);
+      expect(add("1\n2,3,999")).toBe(1005);
+      expect(add("1\n2,3,1000,100000")).toBe(6);
+
+    });
+  });
+
   describe("Supports custom delimiters", () => {
     test('supports custom delimiter syntax "//;\\n1;2"', () => {
       expect(add("//;\n1;2")).toBe(3);
